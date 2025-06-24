@@ -70,13 +70,10 @@ export default function Home() {
     }
   };
 
-  const { nodes, edges } = toFlowFormat(
-    {
-      nodes: graph.nodes,
-      edges: graph.edges,
-    },
-    path
-  );
+  const { nodes, edges } = toFlowFormat({
+    nodes: graph.nodes,
+    edges: graph.edges,
+  });
 
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
