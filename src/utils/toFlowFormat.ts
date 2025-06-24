@@ -2,7 +2,7 @@ import { Node, Edge, MarkerType } from 'reactflow';
 
 export function toFlowFormat(
   graph: { nodes: number[]; edges: [number, number, number][] },
-  path: number[] = []
+  // path: number[] = []
 ) {
   // No path highlighting
   const nodes: Node[] = graph.nodes.map((id) => ({
