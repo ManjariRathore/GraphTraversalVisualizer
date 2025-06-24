@@ -7,7 +7,7 @@ export function dijkstra(graph: Graph): Record<number, DijkstraResult>;
 export function dijkstra(graph: Graph, start: number): DijkstraResult;
 
 // Main implementation
-export function dijkstra(graph: Graph, start?: number): any {
+export function dijkstra(graph: Graph, start?: number): DijkstraResult | Record<number, DijkstraResult> {
   const n = graph.nodes.length;
 
   function dijkstraFrom(startNode: number): DijkstraResult {

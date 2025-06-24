@@ -33,8 +33,10 @@ export default function Home() {
     setPath([]);
     setTime("0");
     setDistances([]);
+    console.log("Graph:", newGraph);
+    console.log("Edges:", newGraph.edges);
   }, [graphType, numNodes]);
-  
+
   const runTraversal = async () => {
     console.log(graph);
     setIsRunning(true);
@@ -71,12 +73,10 @@ export default function Home() {
   const { nodes, edges } = toFlowFormat(
     {
       nodes: graph.nodes,
-      edges: graph.edges.map(([from, to]) => [from, to]),
+      edges: graph.edges,
     },
     path
   );
-
-  const endNode = graph.nodes.length - 1;
 
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
@@ -157,7 +157,7 @@ export default function Home() {
                   >
                     <option value="bfs">Breadth-First Search</option>
                     <option value="dfs">Depth-First Search</option>
-                    <option value="dijkstra">Dijkstra's Algorithm</option>
+                    <option value="dijkstra">Dijkstra&apos;s Algorithm</option>
                     <option value="toposort">Topological Sort</option>
                   </select>
                 </div>
